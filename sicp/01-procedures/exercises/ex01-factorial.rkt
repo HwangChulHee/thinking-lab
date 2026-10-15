@@ -1,20 +1,21 @@
 #lang racket
 
-;; Lab 01 practice scaffold. Fill the TODOs yourself.
-;; Run: racket sicp/01-procedures/exercises/ex01-factorial.rkt
+;; 실습 01: 팩토리얼 구현용 뼈대 코드입니다.
+;; TODO를 직접 채우세요. 의도적으로 해답은 제공하지 않습니다.
+;; 테스트: raco test sicp/01-procedures/exercises/ex01-factorial.rkt
 
 (define (factorial-rec n)
-  (cond [(< n 0) (error 'factorial-rec "n must be nonnegative")]
+  (cond [(< n 0) (error 'factorial-rec "n은 0 이상이어야 합니다")]
         [(= n 0) 1]
-        [else (error 'factorial-rec "TODO: implement the recursive process")]))
+        [else (error 'factorial-rec "TODO: 재귀적 계산 과정을 구현하세요")]))
 
 (define (factorial-iter n)
-  (when (< n 0) (error 'factorial-iter "n must be nonnegative"))
+  (when (< n 0) (error 'factorial-iter "n은 0 이상이어야 합니다"))
   (define (step product counter)
-    (error 'factorial-iter "TODO: implement the iterative process"))
+    (error 'factorial-iter "TODO: 반복적 계산 과정을 구현하세요"))
   (step 1 1))
 
-;; Replace TODOs first. These tests should fail until your implementation works.
+;; TODO를 구현하기 전까지는 테스트가 실패하는 것이 정상입니다.
 (module+ test
   (require rackunit)
   (for ([n (in-range 0 8)])
@@ -23,5 +24,4 @@
     (check-equal? (factorial-iter n) expected)))
 
 (module+ main
-  (require rackunit)
-  (displayln "Complete TODOs, then run: racket -l raco test sicp/01-procedures/exercises/ex01-factorial.rkt"))
+  (displayln "TODO 구현 후 raco test 명령어로 테스트하세요."))
