@@ -1,31 +1,37 @@
-# Reflection — [topic]
+# 학습 회고 — [주제]
 
-Date:
-SICP section / exercise references:
+학습일:
+SICP 장·절 / 연습문제 번호:
 
-## Before
-- My initial prediction:
-- Why I believed it:
+## 학습 전(Before)
 
-## Observation
-- What I implemented:
-- What actually happened:
-- What contradicted my model:
+- 처음 예상한 결과:
+- 그렇게 생각한 이유:
 
-## New mental model
-- My explanation, without looking at notes:
-- An assumption I can now question:
-- What the concept does **not** imply:
+## 관찰(Observation)
 
-## Transfer
-- A different problem where I used this idea:
-- Why the analogy works (and where it breaks):
+- 직접 구현한 내용:
+- 실제 실행 결과:
+- 기존 생각과 충돌한 부분:
 
-## Retrieval
-- Revisit date (3–7 days):
-- Revisit date (2–4 weeks):
-- What I could reproduce without notes:
-- What remains unclear:
+## 새롭게 이해한 모델(New Mental Model)
 
-## Next question
-- What do I want to investigate next?
+- 노트 없이 내 말로 설명하면:
+- 이제 의심할 수 있게 된 기존 가정:
+- 이 개념이 **의미하지 않는 것**:
+
+## 새로운 문제에 적용하기(Transfer)
+
+- 같은 원리를 적용한 다른 문제:
+- 어떤 점에서 연결되고 어떤 점에서 다른가:
+
+## 일정 시간이 지난 뒤 다시 풀기(Retrieval)
+
+- 첫 번째 복습 예정일(3~7일 뒤):
+- 두 번째 복습 예정일(2~4주 뒤):
+- 자료를 보지 않고 재현할 수 있었던 내용:
+- 아직 이해하지 못한 부분:
+
+## 다음 질문
+
+- 다음에 탐구하고 싶은 것은 무엇인가?
