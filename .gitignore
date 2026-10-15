@@ -1,0 +1,10 @@
+# Racket local cache/build artifacts
+compiled/
+*.zo
+*.dep
+
+# Editor and operating-system noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
