@@ -27,6 +27,12 @@
 
 SICP 원서의 예제를 직접 고민하고 구현하는 경험이 실습 개수보다 중요합니다.
 
+## 첫 학습 경로
+
+원서 없이도 진행할 수 있도록 **[SICP 1장 학습 안내판](sicp/01-procedures/README.md)**에서 순서대로 연결합니다.
+
+**개념 교재 → 연습 워크북 → 실행 실습 → 회고·복습**의 경로로 진행합니다. SICP 원서는 선택 참고 자료입니다.
+
 ## 시작하기
 
 [Racket](https://racket-lang.org/)을 설치하고 아래 명령어로 실행합니다.
@@ -55,4 +61,4 @@ raco test sicp/01-procedures/exercises/ex01-factorial.rkt
 - [SICP 온라인 원문](https://sarabander.github.io/sicp/)
 - [MIT Press 출판사 페이지](https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/)
 
-이 저장소의 설명과 실습 가이드는 별도로 작성합니다. 원서의 연습문제 전체 문장은 책에서 확인하고, 여기에는 관련 문제 번호를 연결합니다.
+이 저장소는 독립적으로 읽고 풀 수 있는 교재와 자체 제작 문제를 제공합니다. 원서의 문제 번호는 선택적인 심화 참고로만 연결하며, 원서가 없어도 필수 학습 과정을 완료할 수 있습니다.
