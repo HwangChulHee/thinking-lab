@@ -1,55 +1,58 @@
 # thinking-lab
 
-> A lifelong laboratory for learning to think through computation.
+> 계산을 통해 사고방식을 확장하는 평생 학습 실험실
 
-This is **not** a job-preparation curriculum or a collection of finished demos. The goal is to build durable mental models through **discovery → practice → experimentation → transfer → delayed recall**.
+이 프로젝트는 취업 준비용 커리큘럼이나 완성된 데모 모음이 아닙니다. **발견 → 훈련 → 실험 → 새로운 문제로의 전이(transfer) → 일정 시간이 지난 뒤의 인출 연습**을 통해 오래 남는 사고 도구를 기르는 것이 목적입니다.
 
-## Principles
+## 학습 원칙
 
-1. **Depth over checklists.** Finish a topic when you can apply it to an unfamiliar problem, not merely when its examples run.
-2. **Practice before solutions.** Exercises contain problems, constraints, and tests; hints and solutions stay separate.
-3. **Question assumptions.** Record what you predicted, what actually happened, and what changed in your understanding.
-4. **Independent learning.** Each lab should be runnable and understandable without a video lecture.
-5. **Return later.** Revisit earlier ideas without notes after several days or weeks.
-6. **Follow curiosity.** Future branches may include compilers, operating systems, mathematics, logic, and physics.
+1. **완료보다 깊이:** 예제 실행만으로 끝내지 않고 낯선 문제에 적용할 수 있을 때까지 공부합니다.
+2. **해설보다 직접 풀이:** 문제·제약·테스트와 힌트·해설을 분리합니다.
+3. **가정을 의심하기:** 실행 전 예상, 관찰 결과, 생각이 바뀐 지점을 기록합니다.
+4. **독립 학습:** 강의 영상 없이도 각 실습을 진행할 수 있도록 설명합니다.
+5. **다시 돌아오기:** 며칠 또는 몇 주 후 자료를 보지 않고 다시 풉니다.
+6. **호기심 따라가기:** 이후 컴파일러, 운영체제, 수학, 논리학, 물리학 등으로 확장할 수 있습니다.
 
-## First track: SICP (2nd edition)
+## 언어 원칙
 
-- [01 — Procedures and processes](sicp/01-procedures/README.md) — substitution models, recursion versus iteration, order of growth, higher-order abstractions.
-- 02 — Data abstraction (planned)
-- 03 — State, environments, and streams (planned)
-- 04 — Metalinguistic abstraction (planned)
-- 05 — Register machines and compilation (planned)
+**한국어 설명 + 영어 핵심 용어 병기**를 기본으로 합니다. 코드·함수 이름은 영어로 유지하고, SICP 원서의 장·절·문제 번호를 명시합니다. 영어 학습이 개념 이해를 방해하지 않도록 하기 위한 선택이며, 추후 변경할 수 있습니다.
 
-We use **Scheme** to stay close to *Structure and Interpretation of Computer Programs* (2nd ed.). Working through its examples yourself matters more than finishing quickly.
+## 첫 번째 학습 트랙: SICP (제2판)
 
-## Running the first lab
+- [01 — 프로시저와 계산 과정](sicp/01-procedures/README.md): 치환 모델, 재귀적 과정과 반복적 과정, 성장 차수, 고차 함수
+- 02 — 데이터 추상화(Data Abstraction): 예정
+- 03 — 상태·환경·스트림(State, Environments, Streams): 예정
+- 04 — 메타언어적 추상화(Metalinguistic Abstraction): 예정
+- 05 — 레지스터 기계와 컴파일(Computing with Register Machines): 예정
 
-Install [Racket](https://racket-lang.org/) (which includes the `racket` command). Then:
+SICP 원서의 예제를 직접 고민하고 구현하는 경험이 실습 개수보다 중요합니다.
+
+## 시작하기
+
+[Racket](https://racket-lang.org/)을 설치하고 아래 명령어로 실행합니다.
 
 ```bash
 racket sicp/01-procedures/examples/processes.rkt
 racket sicp/01-procedures/exercises/ex01-factorial.rkt
+raco test sicp/01-procedures/exercises/ex01-factorial.rkt
 ```
 
-The runnable scaffolding uses `#lang racket` for easy setup. Where language semantics differ from SICP's Scheme examples, the lab explicitly calls this out. Later we can introduce `#lang sicp` or a dedicated Scheme interpreter if needed.
+초기 예제는 설치 편의성을 위해 `#lang racket`을 사용합니다. SICP의 Scheme과 동작이 다를 수 있는 부분은 실습에서 별도로 설명하며, 필요하면 `#lang sicp` 또는 별도의 Scheme 실행 환경을 도입할 수 있습니다.
 
-## Learning loop
+## 한 실습의 학습 순서
 
-For every lab:
+1. **예측(Predict):** 코드를 실행하기 전에 결과를 예상합니다.
+2. **구현(Implement):** 정답 코드 없이 직접 풉니다.
+3. **실험(Experiment):** 전제나 조건을 바꿉니다.
+4. **전이(Transfer):** 새로운 문제에 같은 원리를 적용합니다.
+5. **회고(Reflect):** 자신의 말로 설명하고 일정 시간이 지난 뒤 재도전합니다.
 
-1. **Predict** the result before executing code.
-2. **Implement** without a provided final solution.
-3. **Experiment** by changing an assumption or constraint.
-4. **Transfer** the idea to a new problem.
-5. **Reflect** in your own words and revisit after a delay.
+[회고 템플릿](templates/reflection.md)을 활용하세요. 진짜 결과물은 완료한 파일 개수가 아니라 달라진 사고방식에 대한 기록입니다.
 
-Use [the reflection template](templates/reflection.md) to record discoveries. Your notes, not the number of completed files, are the real output.
+## 참고 자료
 
-## References
+- Abelson, Sussman & Sussman, *Structure and Interpretation of Computer Programs*, 제2판
+- [SICP 온라인 원문](https://sarabander.github.io/sicp/)
+- [MIT Press 출판사 페이지](https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/)
 
-- Abelson, Sussman & Sussman, *Structure and Interpretation of Computer Programs*, 2nd edition.
-- [SICP full text](https://sarabander.github.io/sicp/)
-- [MIT Press SICP website](https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/)
-
-This repository provides original guides and exercise prompts; consult the book for the complete text of its exercises.
+이 저장소의 설명과 실습 가이드는 별도로 작성합니다. 원서의 연습문제 전체 문장은 책에서 확인하고, 여기에는 관련 문제 번호를 연결합니다.
