@@ -1,51 +1,52 @@
-# Chapter 1 — Building Abstractions with Procedures
+# 1장 — 프로시저를 통한 추상화(Building Abstractions with Procedures)
 
-**Source:** SICP 2nd edition, Chapter 1. The section references point to the book; this module is an original companion, not a replacement for reading it.
+**기준:** SICP 제2판 1장. 여기서 안내하는 절 번호는 원서를 가리키며, 이 자료는 독립적인 학습 안내서이자 실습 동반 자료입니다.
 
-## What should change in your thinking?
+## 어떤 사고의 변화를 목표로 하는가?
 
-A procedure is a *description of a computational process*, not merely a reusable block of code. Two procedures can return the same value yet generate processes with very different time and space behavior. Later, higher-order procedures allow us to express patterns of computation as values.
+프로시저(Procedure)는 단순한 코드 묶음이 아니라 **계산 과정(Computational Process)을 기술하는 방법**입니다. 같은 값을 돌려주는 두 프로시저도 실행 시간과 공간 사용량이 다른 계산 과정을 만들 수 있습니다. 나아가 고차 프로시저(Higher-order Procedure)는 계산의 패턴 자체를 값처럼 다루게 해 줍니다.
 
-## Learning sequence
+## 학습 순서
 
-| Module | Source | Investigate | Practice |
+| 모듈 | 원서 범위 | 탐구 질문 | 훈련 |
 |---|---|---|---|
-| 01. Evaluation and substitution | §1.1.5–1.1.7 | How does evaluation proceed? | Trace by hand; compare evaluation strategies |
-| 02. Recursive vs iterative processes | §1.2.1–1.2.2 | Does recursive syntax imply linear stack growth? | [Lab 01](labs/01-process-shapes.md) |
-| 03. Orders of growth | §1.2.3–1.2.6 | Which costs survive larger inputs? | Record counts, fit rough growth, explain |
-| 04. Higher-order procedures | §1.3.1–1.3.2 | Can the *pattern* of computation become an argument? | Sum/product/general accumulation |
-| 05. Finding fixed points | §1.3.3–1.3.4 | Can computation be expressed as repeated improvement? | Fixed points, Newton's method |
+| 01. 평가와 치환 모델 | §1.1.5–1.1.7 | 계산은 어떤 순서로 진행될까? | 손으로 전개하고 평가 전략 비교 |
+| 02. 재귀적 과정과 반복적 과정 | §1.2.1–1.2.2 | 재귀 문법은 반드시 스택 증가를 뜻할까? | [실습 01](labs/01-process-shapes.md) |
+| 03. 성장 차수(Order of Growth) | §1.2.3–1.2.6 | 입력이 커지면 어떤 비용이 중요해질까? | 연산 횟수 관찰과 증가율 설명 |
+| 04. 고차 프로시저 | §1.3.1–1.3.2 | 계산의 패턴을 함수의 인자로 만들 수 있을까? | 합계·곱·누적의 일반화 |
+| 05. 고정점(Fixed Point) | §1.3.3–1.3.4 | 반복적인 개선으로 답을 찾을 수 있을까? | 고정점 탐색과 뉴턴 방법 |
 
-## Practice policy
+## 훈련 규칙
 
-1. Read the relevant SICP section.
-2. Predict outcomes **before** running code.
-3. Solve the associated original textbook exercises using the book; don't look up solutions first.
-4. Complete the independent transfer challenge and explain the mechanism.
-5. After 3–7 days, redo one variant without notes. Revisit again after roughly 2–4 weeks.
+1. SICP 해당 절을 읽습니다.
+2. **실행하기 전에** 결과를 예측합니다.
+3. 원서의 연습문제는 원문을 참고하여 직접 풉니다. 답을 먼저 검색하지 않습니다.
+4. 기존 예제와 다른 문제에 적용하고 원리를 설명합니다.
+5. 약 3~7일 뒤 노트 없이 변형 문제를 다시 풀고, 약 2~4주 뒤 한 번 더 확인합니다.
 
-Do not treat the number of solved exercises as a score: explain the *reason* an algorithm behaves the way it does.
+문제 개수만으로 성취를 판단하지 않습니다. **왜 그 계산 과정이 그런 형태를 갖는지** 설명하는 것이 중요합니다.
 
-## Environment
+## 실행 환경
 
-For the first module, install [Racket](https://racket-lang.org/) and run:
+[Racket](https://racket-lang.org/) 설치 후 저장소 루트에서 실행합니다.
 
 ```bash
 racket sicp/01-procedures/examples/processes.rkt
-racket sicp/01-procedures/exercises/ex01-factorial.rkt
+raco test sicp/01-procedures/exercises/ex01-factorial.rkt
 ```
 
-These scripts use `#lang racket`, not `#lang sicp`. Tail calls work in Racket, but do not generalize that guarantee to every language (notably Python).
+예제는 `#lang racket`을 사용합니다. Racket에서는 적절한 꼬리 호출(Tail Call)이 최적화되지만, 같은 형태의 코드를 Python으로 옮겼을 때 동일한 공간 특성을 보장하지는 않습니다.
 
-## First lab
+## 첫 번째 실습
 
-Start with **[Lab 01: A recursive definition need not produce a recursive process](labs/01-process-shapes.md)**. It deliberately requires an explanation, a working implementation, and transfer to a different problem.
+**[실습 01: 재귀적으로 정의된 프로시저가 반드시 재귀적 과정을 만드는 것은 아니다](labs/01-process-shapes.md)**
 
-## Mastery check
+코드 구현 외에도 손으로 계산 과정을 전개하고, 원서 문제를 풀고, 다른 문제에 응용하도록 구성했습니다.
 
-You are ready to proceed when you can, without prompts:
-- Distinguish recursive *syntax* from recursive *process*.
-- Describe deferred operations and fixed-size state.
-- Draw how the process evolves for an unfamiliar small input.
-- Apply the distinction to a fresh problem and explain space behavior.
-- Identify where language/runtime implementation details matter.
+## 다음 단계로 넘어가는 기준
+
+- 재귀적 **문법**과 재귀적 **계산 과정**을 구별할 수 있다.
+- 미뤄진 연산(Deferred Operations)과 일정한 크기의 상태를 설명할 수 있다.
+- 처음 보는 작은 입력에 대해 계산 과정을 그릴 수 있다.
+- 낯선 문제에 적용하고 공간 사용량을 설명할 수 있다.
+- 프로그래밍 언어와 실행 환경에 따라 결과가 달라질 수 있음을 이해한다.
